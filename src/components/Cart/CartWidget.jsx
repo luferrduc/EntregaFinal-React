@@ -1,10 +1,12 @@
-
+import {BsCart2} from 'react-icons/bs'
 
 const CartWidget = () => {
   return (
     <div>
-        CartWidget
-
+        <BsCart2 className='text-lg' style={
+            {fontSize: 20}
+        }/>
+        
     </div>
   )
 }
