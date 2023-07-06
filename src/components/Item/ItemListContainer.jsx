@@ -2,7 +2,9 @@
 
 const ItemListContainer = ({ grettings }) => {
   return (
-    <div>{grettings}</div>
+    <div className="flex justify-center">
+      {grettings}
+    </div>
   )
 }
 

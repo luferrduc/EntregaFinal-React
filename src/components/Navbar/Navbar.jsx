@@ -5,7 +5,7 @@ import Logo from "./Logo"
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between p-5 bg-sky-700">
+    <nav className="flex justify-between p-5 bg-slate-400">
         <Logo />
         <MenuItems />
         <CartWidget />
