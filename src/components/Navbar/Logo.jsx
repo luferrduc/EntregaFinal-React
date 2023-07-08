@@ -2,7 +2,7 @@
 
 const Logo = () => {
   return (
-    <div>Logo</div>
+   <a href="#">Logo</a>
   )
 }
 
