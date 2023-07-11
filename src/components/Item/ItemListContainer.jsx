@@ -1,13 +1,10 @@
+import { Item } from "./Item"
 
 
-const ItemListContainer = ({ grettings }) => {
+const ItemListContainer = ({ products }) => {
   return (
     <section>
-      <header className="text-center">
-        <h3 className="font-bold text-3xl">
-          {grettings}
-        </h3>
-      </header>
+      <Item />
     </section>
   )
 }
