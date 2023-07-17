@@ -5,7 +5,7 @@ export const Item = ({title, platform, genres, price, images, developers }) => {
     <>
     <div className="mx-auto">
         <div>
-            <img src={images[1]} alt="Imagen del juego" className="w-[15rem] h-[20rem]"/>
+            <img src={images[1]} alt="Imagen del juego" className="aspect-auto"/>
         </div>
         <div className="p-4">
             <div>
