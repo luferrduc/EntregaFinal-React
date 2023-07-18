@@ -10,3 +10,37 @@ const CartWidget = () => {
 }
 
 export default CartWidget
+
+
+/*
+Clases BADGE
+.Z_ri7j {
+    position: absolute;
+    bottom: 10px;
+    right: 2px
+}
+
+.zKOslY,.Z_ri7j {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: red;
+    white-space: nowrap;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    color: #fff;
+    padding: .5px 4px 0
+}
+
+
+*/
