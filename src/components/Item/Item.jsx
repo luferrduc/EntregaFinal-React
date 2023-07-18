@@ -3,7 +3,7 @@
 export const Item = ({title, platform, genres, price, images, developers }) => {
   return (
     <div className="flex flex-col gap-4 bg-slate-800 hover:bg-slate-800/30 transition-all ease-in-out hover:scale-105 duration-[0.5s] rounded-sm">
-        <img src={images[1]} alt="Imagen del juego" className=""/>
+        <img src={images[1]} alt="Imagen del juego" className="md:h-3/5"/>
         <div className="flex-grow px-4">
             <h3 className="font-bold text-white text-sm">{title}</h3>
             <p>{genres.map((genre, idx)=>{
