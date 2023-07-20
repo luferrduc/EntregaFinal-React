@@ -1,31 +1,32 @@
-import {useState, useEffect} from 'react'
-import Navbar from "./components/Navbar/Navbar"
-import './App.css'
-import ItemListContainer from "./components/Item/ItemListContainer"
-import { Footer } from "./components/Footer/Footer"
-import {getGames} from "./lib/games.request"
+import Navbar from "./components/Navbar/Navbar";
+import { Footer } from "./components/Footer/Footer";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { Home } from "./pages/Home";
+import { GameDetail } from "./pages/GameDetail";
+import { GameGenre } from "./pages/GameGenre";
+
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Navbar />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/game/:id" element={<GameDetail />} />
+      <Route path="/genre/:name" element={<GameGenre />} />
+    </Route>
+  )
+);
 
 function App() {
-  const [games, setGames] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(()=>{
-    getGames()
-    .then(res=>{
-      setIsLoading(false)
-      setGames(res)
-    })
-  }, [])
-
   return (
-    <div className="flex flex-col h-screen w-full items-center">
-      <Navbar />
-      <main className="flex flex-col flex-grow bg-slate-700 p-20 w-full">
-        { isLoading ? <h3>Cargando...</h3> : <ItemListContainer products={games} />}
-      </main>
+    <div className="flex h-screen w-full flex-col items-center">
+      <RouterProvider router={routes} />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

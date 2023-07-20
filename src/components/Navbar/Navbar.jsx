@@ -1,18 +1,20 @@
-import CartWidget from "../Cart/CartWidget"
-import MenuItems from "../Menu/MenuItems"
+import { Outlet } from "react-router-dom";
+import CartWidget from "../Cart/CartWidget";
+import MenuItems from "../Menu/MenuItems";
+import Logo from "./Logo";
 // import Logo from "./Logo.svg"
-import Logo from '../../assets/karakura.svg'
-
-
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between p-5 bg-slate-800 shadow-md w-full">
-        <Logo width="30" height="30" />
+    <>
+      <nav className="flex w-full justify-between bg-slate-800 p-5 shadow-md">
+        <Logo />
         <MenuItems />
         <CartWidget />
-    </nav>
-  )
-}
+      </nav>
+      <Outlet />
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
