@@ -6,7 +6,7 @@ import { Loading } from "../components/Loading/Loading";
 
 export const GameGenre = () => {
     const { name } = useParams()
-    console.log(name)
+    
     const [games, setGames] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
