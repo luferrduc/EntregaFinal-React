@@ -9,7 +9,7 @@ export const Item = ({id, title, genres, price, images}) => {
         <div className="flex-grow px-4">
             <h3 className="font-bold text-white text-sm">{title}</h3>
             <p>{genres.map((genre, idx)=>{
-                return <span key={genre} className="font-bold text-xs text-slate-100/50">{idx === genres.length - 1  ? genre : `${genre}, `}</span>
+                return <span key={genre.name} className="font-bold text-xs text-slate-100/50">{idx === genres.length - 1  ? genre.name : `${genre.name}, `}</span>
         })}</p>
         </div>
         <p className="font-bold text-white px-4 pb-4 text-xl"> 

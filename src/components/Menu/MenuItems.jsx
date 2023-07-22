@@ -4,19 +4,19 @@ const MenuList = () => {
   return (
     <ul className="flex items-center gap-4">
       <NavLink
-        to={"/genre/acción"}
+        to={"/genre/1"}
         className="text-lg font-bold text-white transition-all duration-[0.4s] ease-in-out hover:underline"
       >
         Action
       </NavLink>
       <NavLink
-        to={"/genre/RPG"}
+        to={"/genre/2"}
         className="text-lg font-bold text-white transition-all duration-[0.4s] ease-in-out hover:underline"
       >
         RPG
       </NavLink>
       <NavLink
-        to={"/genre/deportes"}
+        to={"/genre/3"}
         className="text-lg font-bold text-white transition-all duration-[0.4s] ease-in-out hover:underline"
       >
         Sports

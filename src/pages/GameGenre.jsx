@@ -5,18 +5,19 @@ import { useParams } from "react-router-dom";
 import { Loading } from "../components/Loading/Loading";
 
 export const GameGenre = () => {
-    const { name } = useParams()
+    const { genreId } = useParams()
     
     const [games, setGames] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
-        getGameByGenre(name)
+        getGameByGenre(genreId)
         .then(res => {
+            console.log(res)
             setIsLoading(false)
             setGames(res)
         })
-    }, [name])
+    }, [genreId])
 
     if (isLoading) return <Loading />
     return (
