@@ -6,6 +6,8 @@ const GAMES = [
     price: 21300,
     genres: ["Acción", "Un jugador", "RPG"],
     developers: ["CD Projekt RED"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/e4F2hNGTi5VjMHS29as0dZaQpCPfP6jbQzhPu_GAQ_U_155x92_1x-0.jpeg",
       "https://cdn-products.eneba.com/resized-products/e4F2hNGTi5VjMHS29as0dZaQpCPfP6jbQzhPu_GAQ_U_350x200_1x-0.jpeg",
@@ -18,6 +20,8 @@ const GAMES = [
     price: 10300,
     genres: ["Acción", "Un jugador", "RPG"],
     developers: ["CD Projekt RED"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/hrvuizL_155x92_1x-0.jpg",
       "https://cdn-products.eneba.com/resized-products/hrvuizL_350x200_1x-0.jpg",
@@ -29,6 +33,8 @@ const GAMES = [
     platform: "PC",
     price: 20503,
     genres: ["Deportes", "Multijugador", "Un jugador"],
+    description: "",
+    stock: 10,
     developers: ["EA"],
     images: [
       "https://cdn-products.eneba.com/resized-products/SqEFwIHCz6u0T8pSM0ghGWZTrfv23E70YbrliNLmHDY_155x92_1x-0.jpg",
@@ -42,6 +48,8 @@ const GAMES = [
     price: 17239,
     genres: ["Acción", "Multijugador", "Un jugador", "Aventuras"],
     developers: ["Rockstar Games"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/6M1qP76B-j6vdX0T4bFCHgJeX99MaKBpXFxbpif1MqY_155x92_1x-0.jpeg",
       "https://cdn-products.eneba.com/resized-products/6M1qP76B-j6vdX0T4bFCHgJeX99MaKBpXFxbpif1MqY_350x200_1x-0.jpeg",
@@ -54,6 +62,8 @@ const GAMES = [
     price: 24334,
     genres: ["Acción", "RPG", "Un jugador", "Aventuras", "Horror"],
     developers: ["FromSoftware"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/BjdEY6u_155x92_1x-0.jpg",
       "https://cdn-products.eneba.com/resized-products/BjdEY6u_350x200_1x-0.jpg",
@@ -66,6 +76,8 @@ const GAMES = [
     price: 15868,
     genres: ["Acción", "RPG", "Tercera Persona", "Aventuras"],
     developers: ["Ubisoft Studios"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/TJr-Wtno2pWrPsA9PqK-pH5KTW2wQ3Dwy0JmZmKD-5s_155x92_1x-0.jpeg",
       "https://cdn-products.eneba.com/resized-products/TJr-Wtno2pWrPsA9PqK-pH5KTW2wQ3Dwy0JmZmKD-5s_350x200_1x-0.jpeg",
@@ -78,6 +90,8 @@ const GAMES = [
     price: 6962,
     genres: ["Carreras", "Acción", "Tercera Persona", "Primera Persona"],
     developers: ["Criterion Games"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/4TL8Lsr_155x92_1x-0.jpg",
       "https://cdn-products.eneba.com/resized-products/4TL8Lsr_350x200_1x-0.jpg",
@@ -90,6 +104,8 @@ const GAMES = [
     price: 15556,
     genres: ["Acción", "Un jugador", "Primera Persona"],
     developers: ["Ubisoft Studios"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/clqp8A2_155x92_1x-0.jpg",
       "https://cdn-products.eneba.com/resized-products/clqp8A2_350x200_1x-0.jpg",
@@ -102,6 +118,8 @@ const GAMES = [
     price: 15556,
     genres: ["Acción", "Un jugador", "Primera Persona"],
     developers: ["Ubisoft Studios"],
+    description: "",
+    stock: 10,
     images: [
       "https://cdn-products.eneba.com/resized-products/s29Db6ZBVLneuD0t66qnYRamvGDP3p8chLz-3IomxcU_155x92_1x-0.jpeg",
       "https://cdn-products.eneba.com/resized-products/s29Db6ZBVLneuD0t66qnYRamvGDP3p8chLz-3IomxcU_350x200_1x-0.jpeg",

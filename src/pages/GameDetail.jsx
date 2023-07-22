@@ -19,17 +19,19 @@ export const GameDetail = () => {
   if (isLoading) return <Loading />
   return (
     <div className="flex w-full flex-grow bg-slate-700 p-20">
-      <div className="container flex gap-10">
-        <img src={game?.images[1]} alt="" width={300} />
-        <article className="flex flex-col w-full">
-            <h3 className="text-4xl font-bold my-0 mx-auto p-4">{game?.title}</h3>
-            <p className="flex gap-3 my-0 mx-auto">{game?.genres.map((genre)=>{
-                return <GenresTag key={genre} genre={genre} />
-              })}</p>
-            <div>
-              <p>{game.description}</p>
-            </div>
-        </article>
+      <div className="container mx-auto">
+        <div className="flex gap-10">
+          <img src={game?.images[1]} alt="" className="w-[150px] sm:w-[300px] max-w-[400px]" />
+          <article className="flex flex-col w-full">
+              <h3 className="text-5xl font-bold my-0 mx-auto text-white p-4">{game?.title}</h3>
+              <p className="flex gap-3 my-0 mx-auto">{game?.genres.map((genre)=>{
+                  return <GenresTag key={genre} genre={genre} />
+                })}</p>
+              <div>
+                <p>{game.description}</p>
+              </div>
+          </article>
+        </div>
       </div>
     </div>
   );
