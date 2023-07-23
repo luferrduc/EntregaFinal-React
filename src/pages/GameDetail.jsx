@@ -20,8 +20,8 @@ export const GameDetail = () => {
   if (isLoading) return <Loading />
   return (
     <div className="flex w-full flex-grow bg-slate-700 p-10 md:p-20">
-      <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row gap-10">
+      <div className="container mx-auto pt-5 md:pt-0">
+        <div className="flex flex-col md:flex-row gap-10 items-center">
           <img src={game?.images[1]} alt="" className="w-[150px] sm:w-[300px] max-w-[400px] h-[50%] mx-auto" />
           <article className="flex flex-col w-full gap-5">
               <h3 className="text-2xl md:text-5xl font-bold my-0 mx-auto text-white p-4">{game?.title}</h3>
