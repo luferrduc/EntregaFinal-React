@@ -36,7 +36,7 @@ export const GameDetail = () => {
             <h3 className="mx-auto my-0 p-4 text-2xl font-bold text-white md:text-5xl">
               {game?.title}
             </h3>
-            <span className="mx-auto my-0 flex gap-3">
+            <span className="mx-auto my-0 flex gap-3 flex-wrap">
               {game?.genres.map((genre) => {
                 return (
                   <GenresTag key={genre.name} name={genre.name} id={genre.id} />
