@@ -170,18 +170,30 @@ const GAMES = [
   },
 ];
 
-// const GENRES = [
-//   { id: 1, name: "Acción" },
-//   { id: 2, name: "RPG" },
-//   { id: 3, name: "Deportes" },
-//   { id: 4, name: "Un jugador" },
-//   { id: 5, name: "Aventuras" },
-//   { id: 6, name: "Multijugador" },
-//   { id: 7, name: "Primera persona" },
-//   { id: 8, name: "Carreras" },
-//   { id: 9, name: "Horror" },
-//   { id: 10, name: "Tercera persona"}
-// ];
+const GENRES = [
+  { id: 1, name: "Acción" },
+  { id: 2, name: "RPG" },
+  { id: 3, name: "Deportes" },
+  { id: 4, name: "Un jugador" },
+  { id: 5, name: "Aventuras" },
+  { id: 6, name: "Multijugador" },
+  { id: 7, name: "Primera persona" },
+  { id: 8, name: "Carreras" },
+  { id: 9, name: "Horror" },
+  { id: 10, name: "Tercera persona"}
+];
+
+
+export const getGenre = (genreId) => {
+  const genre = GENRES.find((genre) => {
+    return genre.id === parseInt(genreId);
+  });
+  return new Promise((res) => {
+    setTimeout(() => {
+      res(genre);
+    }, 200);
+  });
+}
 
 export const getGames = () => {
   return new Promise((res) => {
