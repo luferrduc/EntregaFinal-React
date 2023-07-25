@@ -11,6 +11,10 @@ export const GameDetail = () => {
   const [game, setGame] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const onAdd = (count) => {
+    alert(`Se han agregado ${count} productos al carrito de compras`)
+  };
+
   useEffect(() => {
     getGameById(id).then((res) => {
       setIsLoading(false);
@@ -42,7 +46,7 @@ export const GameDetail = () => {
             <div className="p-4 text-justify">
               <p className="text-white">{game.description}</p>
             </div>
-            <ItemCount />
+            <ItemCount stock={game.stock} onAdd={onAdd}/>
           </article>
         </div>
       </div>
