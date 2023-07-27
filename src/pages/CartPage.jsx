@@ -1,10 +1,99 @@
-import { ContentWrap } from "../components/ContentWrap/ContentWrap"
-
+import { ContentWrap } from "../components/ContentWrap/ContentWrap";
+import { useCartContext } from "../state/Cart.context";
 
 export const CartPage = () => {
+  const { cart, getTotalPriceGames, removeProduct, getTotalItems } =
+    useCartContext();
+
   return (
     <ContentWrap>
-        <h1>Cart Page</h1>
+      <h3>Carrito de Compras</h3>
+
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400">
+          <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Nombre
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Plataforma
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Precio
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Cantidad
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Subtotal
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart.length > 0 ? (
+              cart.map((game) => {
+                return (
+                  <tr
+                    key={game.id}
+                    className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+                  >
+                    <th
+                      scope="row"
+                      className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                    >
+                      {game.title}
+                    </th>
+                    <td className="px-6 py-4">{game.platform}</td>
+                    <td className="px-6 py-4">
+                      ${game.price.toLocaleString("es-CL")}
+                    </td>
+                    <td className="px-6 py-4">{game.cantidad}</td>
+                    <td className="px-6 py-4">
+                      ${(game.price * game.cantidad).toLocaleString("es-CL")}
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      <span
+                        onClick={() => removeProduct(game.id)}
+                        className="font-semibold text-red-600 hover:underline dark:text-red-500 hover:cursor-pointer"
+                      >
+                        Remover
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600">
+                <th
+                  scope="row"
+                  className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                >
+                  No hay juegos en el carrito
+                </th>
+              </tr>
+            )}
+          </tbody>
+          <tfoot className="text-md bg-gray-50 uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+            <tr className="font-semibold text-gray-900 dark:text-white">
+              <th scope="row" className="px-6 py-3 text-base">
+                Total
+              </th>
+
+              <td className="px-6 py-3"></td>
+              <td className="px-6 py-3"></td>
+              <td className="px-6 py-3">{getTotalItems()}</td>
+              <td className="px-6 py-3">
+                ${getTotalPriceGames().toLocaleString("es-CL")}
+              </td>
+              <td className="px-6 py-3"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </ContentWrap>
-  )
-}
+  );
+};
