@@ -19,7 +19,7 @@ export const ItemCount = ({stock=0, onAdd}) => {
         <span className="text-white font-semibold">{count}</span>
         <button onClick={handleSum} className="bg-cyan-700 text-white px-5 py-1 rounded-lg font-semibold text-lg hover:bg-cyan-700/70">+</button>
       </div>
-      <button onClick={()=>{onAdd(count)}} className="block text-white bg-cyan-950 px-8 py-2 rounded-lg hover:bg-cyan-950/70 font-semibold" disabled={!stock}>Agregar</button>
+      <button onClick={()=>{onAdd(count)}} disabled={!stock} className="block text-white bg-cyan-950 px-8 py-2 rounded-lg hover:bg-cyan-950/70 font-semibold" >Agregar</button>
     </div>
   )
 }

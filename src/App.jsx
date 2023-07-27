@@ -9,6 +9,9 @@ import {
 import { Home } from "./pages/Home";
 import { GameDetail } from "./pages/GameDetail";
 import { GameGenre } from "./pages/GameGenre";
+import  {CartProvider}  from "./state/Cart.context";
+import { ThemeProvider } from "./state/Theme.context";
+import { CartPage } from "./pages/CartPage";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -16,7 +19,8 @@ const routes = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/game/:id" element={<GameDetail />} />
       <Route path="/genre/:genreId" element={<GameGenre />} />
-      <Route path="*" element={<Home />}/>
+      <Route path="/cart" element={ <CartPage /> }/>
+      <Route path="*" element={<Home />} />
     </Route>
   )
 );
@@ -24,8 +28,12 @@ const routes = createBrowserRouter(
 function App() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center">
-      <RouterProvider router={routes} />
-      <Footer />
+      <ThemeProvider>
+        <CartProvider>
+          <RouterProvider router={routes} />
+          <Footer />
+        </CartProvider>
+      </ThemeProvider>
     </div>
   );
 }

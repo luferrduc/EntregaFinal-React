@@ -5,24 +5,28 @@ import { Loading } from "../components/Loading/Loading";
 import { GenresTag } from "../components/Genres/GenresTag";
 import { ItemCount } from "../components/Item/ItemCount";
 import { ContentWrap } from "../components/ContentWrap/ContentWrap";
+import { useCartContext } from "../state/Cart.context";
 
 export const GameDetail = () => {
   const { id } = useParams();
-  const [game, setGame] = useState([]);
+  const [game, setGame] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const onAdd = (count) => {
-    alert(`Se han agregado ${count} productos al carrito de compras`)
-  };
+  const { addProduct } = useCartContext();
 
+  const handleAddProduct = (cantidad) => {
+    addProduct(game, cantidad);
+  };
   useEffect(() => {
-    getGameById(id).then((res) => {
+    getGameById(+id).then((res) => {
       setIsLoading(false);
       setGame(res);
     });
   }, []);
 
   if (isLoading) return <Loading />;
+  if(!Object.keys(game).length) return
+
   return (
     <ContentWrap>
       <div className="container mx-auto pt-5 md:pt-0">
@@ -36,7 +40,7 @@ export const GameDetail = () => {
             <h3 className="mx-auto my-0 p-4 text-2xl font-bold text-white md:text-5xl">
               {game?.title}
             </h3>
-            <span className="mx-auto my-0 flex gap-3 flex-wrap">
+            <span className="mx-auto my-0 flex flex-wrap gap-3">
               {game?.genres.map((genre) => {
                 return (
                   <GenresTag key={genre.name} name={genre.name} id={genre.id} />
@@ -46,7 +50,7 @@ export const GameDetail = () => {
             <div className="p-4 text-justify">
               <p className="text-white">{game.description}</p>
             </div>
-            <ItemCount stock={game.stock} onAdd={onAdd}/>
+            <ItemCount stock={game.stock} onAdd={handleAddProduct} />
           </article>
         </div>
       </div>
