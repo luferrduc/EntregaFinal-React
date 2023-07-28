@@ -2,12 +2,12 @@ import { ContentWrap } from "../components/ContentWrap/ContentWrap";
 import { useCartContext } from "../state/Cart.context";
 
 export const CartPage = () => {
-  const { cart, getTotalPriceGames, removeProduct, getTotalItems } =
+  const { cart, getTotalPriceGames, removeProduct, getTotalItems, cleanCart } =
     useCartContext();
 
   return (
     <ContentWrap>
-      <h3>Carrito de Compras</h3>
+      <h3 className="text-3xl font-semibold text-center text-white p-5 mb-2">Carrito de Compras</h3>
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400">
@@ -39,7 +39,7 @@ export const CartPage = () => {
                 return (
                   <tr
                     key={game.id}
-                    className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600"
+                    className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-900"
                   >
                     <th
                       scope="row"
@@ -67,10 +67,11 @@ export const CartPage = () => {
                 );
               })
             ) : (
-              <tr className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600">
+              <tr className="border-b w-full items-center bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-900">
                 <th
+                  colSpan={6}
                   scope="row"
-                  className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                  className="whitespace-nowrap text-center px-6 py-4 font-medium text-gray-900 dark:text-white"
                 >
                   No hay juegos en el carrito
                 </th>
@@ -93,6 +94,14 @@ export const CartPage = () => {
             </tr>
           </tfoot>
         </table>
+      </div>
+      <div className="flex justify-center gap-5 p-8">
+        <button onClick={() => cleanCart()} className="px-4 py-2 bg-red-600 rounded-lg text-md font-semibold text-white hover:bg-red-500">
+          Vaciar
+        </button>
+        <button className="px-4 py-2 bg-blue-700 rounded-lg text-md font-semibold text-white hover:bg-blue-500">
+          Comprar
+        </button>
       </div>
     </ContentWrap>
   );
