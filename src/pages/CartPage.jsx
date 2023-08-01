@@ -80,12 +80,9 @@ export const CartPage = () => {
           </tbody>
           <tfoot className="text-md bg-gray-50 uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
             <tr className="font-semibold text-gray-900 dark:text-white">
-              <th scope="row" className="px-6 py-3 text-base">
+              <th scope="row" colSpan={3} className="px-6 py-3 text-base">
                 Total
               </th>
-
-              <td className="px-6 py-3"></td>
-              <td className="px-6 py-3"></td>
               <td className="px-6 py-3">{getTotalItems()}</td>
               <td className="px-6 py-3">
                 ${getTotalPriceGames().toLocaleString("es-CL")}
