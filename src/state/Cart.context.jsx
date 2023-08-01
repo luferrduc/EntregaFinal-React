@@ -6,9 +6,16 @@ export const useCartContext = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  const searchProduct = (id) => {
+    return cart.find((game) => game.id === id)
+  }
+
+  const cantidadProduct  = (id) => {
+    return searchProduct(id)?.cantidad ||  0
+  }
   // Añadir juegos al carrito
   const addProduct = (item, cantidad) => {
-    const elemento = cart.find((game) => game.id === item.id);
+    const elemento =  searchProduct(item.id)
     if (!elemento) return setCart([...cart, { ...item, cantidad }]);
     const newCart = cart.map((game) =>
       game.id === item.id
@@ -28,18 +35,20 @@ export const CartProvider = ({ children }) => {
   const cleanCart = () => setCart([]);
 
   // Obtener precio total del carrito
-  const getTotalPriceGames = () =>
-    cart.reduce((acc, item) => acc + item.price * item.cantidad, 0);
+  const getTotalPriceGames = useMemo(() =>
+    cart.reduce((acc, item) => acc + item.price * item.cantidad, 0), [cart]);
 
   // Obtener el total de items del carrito
-  const getTotalItems = () =>
-    cart.reduce((acc, item) => acc + item.cantidad, 0);
+  const getTotalItems = useMemo(() =>
+    cart.reduce((acc, item) => acc + item.cantidad, 0),  [cart]);
 
   const value = {
     cart,
     addProduct,
     removeProduct,
     cleanCart,
+    searchProduct,
+    cantidadProduct,
     getTotalPriceGames,
     getTotalItems
   };

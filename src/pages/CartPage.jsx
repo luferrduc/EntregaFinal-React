@@ -83,9 +83,9 @@ export const CartPage = () => {
               <th scope="row" colSpan={3} className="px-6 py-3 text-base">
                 Total
               </th>
-              <td className="px-6 py-3">{getTotalItems()}</td>
+              <td className="px-6 py-3">{getTotalItems}</td>
               <td className="px-6 py-3">
-                ${getTotalPriceGames().toLocaleString("es-CL")}
+                ${getTotalPriceGames.toLocaleString("es-CL")}
               </td>
               <td className="px-6 py-3"></td>
             </tr>

@@ -12,7 +12,7 @@ export const GameDetail = () => {
   const [game, setGame] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const { addProduct } = useCartContext();
+  const { addProduct, cantidadProduct } = useCartContext();
 
   const handleAddProduct = (cantidad) => {
     addProduct(game, cantidad);
@@ -47,10 +47,11 @@ export const GameDetail = () => {
                 );
               })}
             </span>
-            <div className="p-4 text-justify">
+            <div className="p-4 text-justify flex flex-col gap-5">
               <p className="text-white">{game.description}</p>
+              <p className="font-bold text-white text-2xl text-center">Precio: ${game.price.toLocaleString('es-CL')}</p>
             </div>
-            <ItemCount stock={game.stock} onAdd={handleAddProduct} />
+            <ItemCount stock={game.stock - (cantidadProduct(parseInt(game.id)))} onAdd={handleAddProduct} />
           </article>
         </div>
       </div>
