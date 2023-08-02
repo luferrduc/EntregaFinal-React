@@ -199,7 +199,7 @@ export const getGames = () => {
   return new Promise((res) => {
     setTimeout(() => {
       res(GAMES);
-    }, 700);
+    }, 500);
   });
 };
 
