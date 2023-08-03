@@ -183,9 +183,12 @@ const GENRES = [
   { id: 10, name: "Tercera persona"}
 ];
 
-import { getDocs, collection, getDoc } from "firebase/firestore";
+import { getDocs, collection, getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
+
+const gamesRef = collection(db,'items')
+const genresRef = collection(db,'genres')
 
 
 export const getGenre = (genreId) => {
@@ -199,23 +202,45 @@ export const getGenre = (genreId) => {
   });
 }
 
-export const getGames = () => {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(GAMES);
-    }, 500);
-  });
+export const getGames = async () => {
+  let games = []
+  const querySnapshot = await getDocs(gamesRef) 
+  querySnapshot.forEach((doc)=>{
+    games = [...games, {...doc.data(), id: doc.id}]
+  })
+
+  console.log(games)
+
+  return games
+  // return new Promise((res) => {
+  //   setTimeout(() => {
+  //     res(GAMES);
+  //   }, 500);
+  // });
 };
 
-export const getGameById = (id) => {
-  const game = GAMES.find((game) => {
-    return game.id === parseInt(id);
-  });
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(game);
-    }, 500);
-  });
+export const getGameById = async (id) => {
+
+  const document = doc(db, 'items', id)
+  // console.log(document)
+  const docSnapshot = await getDoc(document)
+  const hla = docSnapshot.data().genres.map((data) => {console.log(data.data())})
+  
+
+  let data = {id: docSnapshot.id, ...docSnapshot.data(), genres: docSnapshot.data().genres.data()}
+  console.log(data)
+  if(docSnapshot.exists()) return {id: docSnapshot.id, ...docSnapshot.data(), genres: docSnapshot.data().genres}
+
+  
+  return undefined
+  // const game = GAMES.find((game) => {
+  //   return game.id === parseInt(id);
+  // });
+  // return new Promise((res) => {
+  //   setTimeout(() => {
+  //     res(game);
+  //   }, 500);
+  // });
 };
 
 export const getGameByGenre = (genreId) => {

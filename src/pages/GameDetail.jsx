@@ -18,7 +18,7 @@ export const GameDetail = () => {
     addProduct(game, cantidad);
   };
   useEffect(() => {
-    getGameById(+id).then((res) => {
+    getGameById(id).then((res) => {
       setIsLoading(false);
       setGame(res);
     });
