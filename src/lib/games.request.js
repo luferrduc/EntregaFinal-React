@@ -183,6 +183,10 @@ const GENRES = [
   { id: 10, name: "Tercera persona"}
 ];
 
+import { getDocs, collection, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
+
+
 
 export const getGenre = (genreId) => {
   const genre = GENRES.find((genre) => {
