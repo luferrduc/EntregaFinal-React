@@ -12,6 +12,7 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(()=>{
+    // cargarData()
     getGames()
     .then(res=>{
       setIsLoading(false)
@@ -20,6 +21,7 @@ export const Home = () => {
   }, [])
 
   if (isLoading) return <Loading />
+
   return (
       <ContentWrap>
         <ItemListContainer products={games} />

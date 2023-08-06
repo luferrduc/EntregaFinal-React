@@ -43,7 +43,7 @@ export const GameDetail = () => {
             <span className="mx-auto my-0 flex flex-wrap gap-3">
               {game?.genres.map((genre) => {
                 return (
-                  <GenresTag key={genre.name} name={genre.name} id={genre.id} />
+                  <GenresTag key={genre.id} name={genre.name} id={genre.id} />
                 );
               })}
             </span>
@@ -51,7 +51,7 @@ export const GameDetail = () => {
               <p className="text-white">{game.description}</p>
               <p className="font-bold text-white text-2xl text-center">Precio: ${game.price.toLocaleString('es-CL')}</p>
             </div>
-            <ItemCount stock={game.stock - (cantidadProduct(parseInt(game.id)))} onAdd={handleAddProduct} />
+            <ItemCount stock={game.stock - (cantidadProduct(game.id))} onAdd={handleAddProduct} />
           </article>
         </div>
       </div>

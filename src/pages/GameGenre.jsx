@@ -25,10 +25,18 @@ export const GameGenre = () => {
   if (isLoading) return <Loading />;
   return (
     <ContentWrap>
-      <h3 className="text-center text-3xl font-semibold text-white pb-5 mb-5">
-        Juegos de {genre.name}
-      </h3>
-      <ItemListContainer products={games} />
+      {games.length ? (
+        <>
+          <h3 className="mb-5 pb-5 text-center text-3xl font-semibold text-white">
+            Juegos de {genre.name}
+          </h3>
+          <ItemListContainer products={games} />
+        </>
+      ) : (
+        <h3 className="mb-5 pb-5 text-center text-3xl font-semibold text-white">
+          No hay juegos en esta categoría
+        </h3>
+      )}
     </ContentWrap>
   );
 };
