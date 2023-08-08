@@ -96,7 +96,7 @@
 //     title: "GTA V",
 //     platform: "PC",
 //     price: 15556,
-//     genres: ["USfnlvYAhuL9EQrVjKc1", "zDNkMiGcq2UhvLVle9PB", "RhwhO6gIEcXyR3TmcAEp" 
+//     genres: ["USfnlvYAhuL9EQrVjKc1", "zDNkMiGcq2UhvLVle9PB", "RhwhO6gIEcXyR3TmcAEp"
 //     ],
 //     developers: ["Ubisoft Studios"],
 //     description:
@@ -122,19 +122,19 @@
 //   { id: 10, name: "Tercera persona" },
 // ];
 
-import { getDocs, collection, getDoc, doc, addDoc } from "firebase/firestore";
+import { getDocs, collection, getDoc, doc, addDoc, writeBatch, increment } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const gamesRef = collection(db, "items");
 const genresRef = collection(db, "genres");
 
 export const getGenre = async (genreId) => {
+  const genreDocument = doc(db, "genres", genreId);
+  const genreDocSnapshot = await getDoc(genreDocument);
+  if (genreDocSnapshot.exists())
+    return { id: genreDocSnapshot.id, ...genreDocSnapshot.data() };
 
-  const genreDocument = doc(db, 'genres', genreId)
-  const genreDocSnapshot = await getDoc(genreDocument)
-  if(genreDocSnapshot.exists()) return {id: genreDocSnapshot.id, ...genreDocSnapshot.data()}
-
-  return null
+  return null;
 };
 
 export const getGenres = async () => {
@@ -147,22 +147,21 @@ export const getGenres = async () => {
   return genres;
 };
 
-
 const addGenreName = async (game) => {
   const genres = await getGenres();
   // let items = []
-  let newGame = {}
+  let newGame = {};
   // games.forEach(game => {
-    let _foundGenres = [];
-    game.genres.map((genre) => {
-      let _foundGenre = genres.find((_genre) => _genre.id === genre);
-      _foundGenres = [..._foundGenres, _foundGenre];
-    });
-    // items = [...items, { ...game, genres: _foundGenres }]
-  newGame = {...game, genres: _foundGenres}
+  let _foundGenres = [];
+  game.genres.map((genre) => {
+    let _foundGenre = genres.find((_genre) => _genre.id === genre);
+    _foundGenres = [..._foundGenres, _foundGenre];
+  });
+  // items = [...items, { ...game, genres: _foundGenres }]
+  newGame = { ...game, genres: _foundGenres };
   // })
-  return newGame
-}
+  return newGame;
+};
 
 export const getGames = async () => {
   let games = [];
@@ -171,10 +170,10 @@ export const getGames = async () => {
     games = [...games, { ...doc.data(), id: doc.id }];
   });
 
-  let newGames = []
+  let newGames = [];
   for (const game of games) {
-    let newGame = await addGenreName(game)
-    newGames = [...newGames, newGame]
+    let newGame = await addGenreName(game);
+    newGames = [...newGames, newGame];
   }
   return newGames;
 };
@@ -182,26 +181,24 @@ export const getGames = async () => {
 export const getGameById = async (id) => {
   const itemsDocument = doc(db, "items", id);
   const itemsDocSnapshot = await getDoc(itemsDocument);
-  if(itemsDocSnapshot.exists()){
-    let game = {id: itemsDocSnapshot.id, ...itemsDocSnapshot.data()}
-    game = await addGenreName(game)
-    return game
+  if (itemsDocSnapshot.exists()) {
+    let game = { id: itemsDocSnapshot.id, ...itemsDocSnapshot.data() };
+    game = await addGenreName(game);
+    return game;
   }
 
   return null;
-
 };
 
 export const getGameByGenre = async (genreId) => {
+  let gamesGenre = await getGames();
+  const games = gamesGenre.filter((game) => {
+    return game.genres.some((genre) => {
+      return genre.id === genreId;
+    });
+  });
 
-  let gamesGenre = await getGames()
-  const games = gamesGenre.filter((game)=>{
-    
-    return game.genres.some((genre) => { return genre.id === genreId})
-  })
-
-  return games
-
+  return games;
 };
 
 // export const cargarData = async () => {
@@ -209,3 +206,16 @@ export const getGameByGenre = async (genreId) => {
 //     await addDoc(gamesRef, game)
 //   })
 // }
+
+export const updateBooks = async (items) => {
+
+  const batch = writeBatch(db)
+
+  items.forEach(({id, cantidad}) => {
+    batch.update(doc(db,'items',id), {
+      stock: increment(-cantidad)
+    })
+  })
+
+  batch.commit()
+};
