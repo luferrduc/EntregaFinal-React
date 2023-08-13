@@ -85,7 +85,7 @@ En esta sección se muestran algunas de las librerías/frameworks que se utiliza
 * [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
 * [![React-router-dom][React-router-dom]][React-router-dom-url]
 * [![Vercel][Vercel]][Vercel-url]
-* [![Firebase][Firebase]][]
+* [Firebase][Firebase]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
