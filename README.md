@@ -84,7 +84,6 @@ En esta sección se muestran algunas de las librerías/frameworks que se utiliza
 * [![React][React.js]][React-url]
 * [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
 * [![React-router-dom][React-router-dom]][React-router-dom-url]
-* [![React-Hook-Form][React-Hook-Form]]
 * [![Vercel][Vercel]][Vercel-url]
 * [![Firebase][Firebase]][Firebase-url]
 * [![React-Hook-Form][React-Hook-Form]][React-Hook-Form-url]
