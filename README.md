@@ -84,8 +84,10 @@ En esta sección se muestran algunas de las librerías/frameworks que se utiliza
 * [![React][React.js]][React-url]
 * [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
 * [![React-router-dom][React-router-dom]][React-router-dom-url]
+* [![React-Hook-Form][React-Hook-Form]]
 * [![Vercel][Vercel]][Vercel-url]
-* [Firebase][Firebase]
+* [![Firebase][Firebase]][Firebase-url]
+* [![React-Hook-Form][React-Hook-Form]][React-Hook-Form-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -201,4 +203,6 @@ Otros recursos que fueron utilizados para este proyecto
 [Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
 [Vercel-url]: https://vercel.com
 [Firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/
 [React-Hook-Form]: https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white
+[React-Hook-Form-url]: https://www.react-hook-form.com
