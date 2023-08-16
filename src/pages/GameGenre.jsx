@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getGameByGenre, getGenre } from "../lib/games.request";
+import { getGameByGenre, getGenre  } from "../lib/games.request";
 import ItemListContainer from "../components/Item/ItemListContainer";
 import { useParams } from "react-router-dom";
 import { Loading } from "../components/Loading/Loading";
@@ -14,9 +14,7 @@ export const GameGenre = () => {
 
   useEffect(() => {
     getGameByGenre(genreId).then((res) => {
-      getGenre(genreId).then((response) => {
-        setGenre(response);
-      });
+      getGenre(genreId).then(res => setGenre(res))
       setIsLoading(false);
       setGames(res);
     });
@@ -25,10 +23,18 @@ export const GameGenre = () => {
   if (isLoading) return <Loading />;
   return (
     <ContentWrap>
-      <h3 className="text-center text-3xl font-semibold text-white pb-5 mb-5">
-        Juegos de {genre.name}
-      </h3>
-      <ItemListContainer products={games} />
+      {games.length ? (
+        <>
+          <h3 className="mb-5 pb-5 text-center text-3xl font-semibold text-white">
+            Juegos de {genre.name}
+          </h3>
+          <ItemListContainer products={games} />
+        </>
+      ) : (
+        <h3 className="mb-5 pb-5 text-center text-3xl font-semibold text-white">
+          No hay juegos en esta categoría
+        </h3>
+      )}
     </ContentWrap>
   );
 };

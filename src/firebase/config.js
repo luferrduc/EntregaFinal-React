@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCcNZH5JfWOoFhJbRo4YbOyjXkHHn9uB60",
-  authDomain: "karakura-store.firebaseapp.com",
-  projectId: "karakura-store",
-  storageBucket: "karakura-store.appspot.com",
-  messagingSenderId: "986711472002",
-  appId: "1:986711472002:web:e24e78da104ec7d5e9019b"
+  apiKey: import.meta.env.VITE_FBS_API_KEY,
+  authDomain: import.meta.env.VITE_FBS_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FBS_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FBS_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FBS_SENDER_ID,
+  appId: import.meta.env.VITE_FBS_APP_ID
 };
 
 // Initialize Firebase

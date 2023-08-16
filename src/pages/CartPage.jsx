@@ -1,3 +1,4 @@
+import { CartBuyForm } from "../components/Cart/CartBuyForm";
 import { ContentWrap } from "../components/ContentWrap/ContentWrap";
 import { useCartContext } from "../state/Cart.context";
 
@@ -92,14 +93,13 @@ export const CartPage = () => {
           </tfoot>
         </table>
       </div>
-      <div className="flex justify-center gap-5 p-8">
+      <div className="flex justify-end p-8">
         <button onClick={() => cleanCart()} className="px-4 py-2 bg-red-600 rounded-lg text-md font-semibold text-white hover:bg-red-500">
           Vaciar
         </button>
-        <button className="px-4 py-2 bg-blue-700 rounded-lg text-md font-semibold text-white hover:bg-blue-500">
-          Comprar
-        </button>
       </div>
+      
+      <CartBuyForm />
     </ContentWrap>
   );
 };
