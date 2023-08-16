@@ -3,7 +3,6 @@ import { getGames } from "../lib/games.request"
 import ItemListContainer from "../components/Item/ItemListContainer"
 import { Loading } from "../components/Loading/Loading"
 import { ContentWrap } from "../components/ContentWrap/ContentWrap"
-// import {cargarData} from '../lib/games.request'
 
 
 export const Home = () => {
@@ -12,7 +11,7 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(()=>{
-    // cargarData()
+
     getGames()
     .then(res=>{
       setIsLoading(false)

@@ -6,10 +6,12 @@ import { updateGames } from "../../lib/games.request";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export const CartBuyForm = () => {
   const { cart, getTotalPriceGames, cleanCart } =
     useCartContext();
 
+  const disabledButton = cart.length === 0 ? 'opacity-[0.4]' : 'hover:bg-blue-800 focus:ring-blue-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
   const {
     register,
     handleSubmit,
@@ -17,7 +19,6 @@ export const CartBuyForm = () => {
     formState: { errors },
     watch,
   } = useForm();
-
   const createOrder = async (nombre, telefono, email) => {
     const items = cart.map(({ id, title, cantidad, price }) => ({
       id,
@@ -26,7 +27,7 @@ export const CartBuyForm = () => {
       price,
     }));
    
-    if(!items.length){
+    if(items.length === 0){
       toast.warn(`No existen productos en el carrito`, {
         className: "bg-slate-500",
         progressClassName: "bg-sky-500",
@@ -58,7 +59,6 @@ export const CartBuyForm = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     const { telefono, nombre, email } = data;
-
     const id = await toast.promise(
       createOrder(nombre, telefono, email),
       {
@@ -72,25 +72,26 @@ export const CartBuyForm = () => {
       }
     );
 
-    toast(`Tu orden es: ${id}`, {
-      className: "bg-slate-500",
-      progressClassName: "bg-sky-500",
-      position: "top-right",
-      autoClose: 4000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    if(id){
+      toast(`Tu orden es: ${id}`, {
+        className: "bg-slate-500",
+        progressClassName: "bg-sky-500",
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      resetField("nombre")
+      resetField("apellido")
+      resetField("email")
+      resetField("email2")
+      resetField("telefono")
+    }
 
-    resetField("nombre")
-    resetField("apellido")
-    resetField("email")
-    resetField("email2")
-    resetField("telefono")
-    console.log(data);
   });
 
   return (
@@ -259,8 +260,9 @@ export const CartBuyForm = () => {
       </div>
       <button
         type="submit"
-        className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
-      >
+        className={`w-full rounded-lg bg-blue-700 dark:bg-blue-600 ${disabledButton} px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 sm:w-auto`}
+        disabled={cart.length === 0}
+      > 
         Comprar
       </button>
       <ToastContainer />

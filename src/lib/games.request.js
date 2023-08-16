@@ -145,7 +145,6 @@ import { getDocs, collection, getDoc, doc, addDoc, writeBatch, increment } from 
 import { db } from "../firebase/config";
 
 const gamesRef = collection(db, "items");
-// const genresRef = collection(db, "genres");
 
 export const getGenre = async (genreId) => {
   const genreDocument = doc(db, "genres", genreId);
@@ -188,13 +187,6 @@ export const getGames = async () => {
   querySnapshot.forEach((doc) => {
     games = [...games, { ...doc.data(), id: doc.id }];
   });
-
-  console.log(games)
-  let newGames = [];
-  // for (const game of games) {
-  //   let newGame = await addGenreName(game);
-  //   newGames = [...newGames, newGame];
-  // }
   return games;
 };
 
@@ -203,7 +195,6 @@ export const getGameById = async (id) => {
   const itemsDocSnapshot = await getDoc(itemsDocument);
   if (itemsDocSnapshot.exists()) {
     let game = { id: itemsDocSnapshot.id, ...itemsDocSnapshot.data() };
-    // game = await addGenreName(game);
     return game;
   }
 
@@ -212,13 +203,9 @@ export const getGameById = async (id) => {
 
 export const getGameByGenre = async (genreId) => {
   let gamesGenre = await getGames()
-
-  console.log({gamesGenre})
-  console.log("Primero")
   const games = gamesGenre.filter((game) => {
     return game.genres.some(genre => genreId === genre.id)
   });
-  console.log("Segundo")
   return games;
 };
 
