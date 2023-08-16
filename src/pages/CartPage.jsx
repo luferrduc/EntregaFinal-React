@@ -1,22 +1,10 @@
 import { CartBuyForm } from "../components/Cart/CartBuyForm";
 import { ContentWrap } from "../components/ContentWrap/ContentWrap";
 import { useCartContext } from "../state/Cart.context";
-import { useForm } from "react-hook-form";
 
 export const CartPage = () => {
   const { cart, getTotalPriceGames, removeProduct, getTotalItems, cleanCart } =
     useCartContext();
-
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm();
-  
-    const onSubmit = handleSubmit((data) => {
-      // console.log(data)
-    });
-
 
   return (
     <ContentWrap>
@@ -113,7 +101,7 @@ export const CartPage = () => {
           Comprar
         </button>
       </div>
-      <CartBuyForm register={register} onSubmit={onSubmit} formState={{formState: errors}} />
+      <CartBuyForm />
     </ContentWrap>
   );
 };

@@ -191,13 +191,14 @@ export const getGameById = async (id) => {
 };
 
 export const getGameByGenre = async (genreId) => {
-  let gamesGenre = await getGames();
-  const games = gamesGenre.filter((game) => {
-    return game.genres.some((genre) => {
-      return genre.id === genreId;
-    });
-  });
+  let gamesGenre = getGames().then(res => res);
 
+  console.log({gamesGenre})
+  console.log("Primero")
+  const games = gamesGenre.filter((game) => {
+    return game.genres.some(genre => genreId === genre.id)
+  });
+  console.log("Segundo")
   return games;
 };
 
@@ -207,7 +208,7 @@ export const getGameByGenre = async (genreId) => {
 //   })
 // }
 
-export const updateBooks = async (items) => {
+export const updateGames = async (items) => {
 
   const batch = writeBatch(db)
 
