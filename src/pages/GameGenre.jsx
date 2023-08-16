@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getGameByGenre, getGenre } from "../lib/games.request";
+import { getGameByGenre, getGenre  } from "../lib/games.request";
 import ItemListContainer from "../components/Item/ItemListContainer";
 import { useParams } from "react-router-dom";
 import { Loading } from "../components/Loading/Loading";
@@ -14,9 +14,7 @@ export const GameGenre = () => {
 
   useEffect(() => {
     getGameByGenre(genreId).then((res) => {
-      getGenre(genreId).then((response) => {
-        setGenre(response);
-      });
+      getGenre(genreId).then(res => setGenre(res))
       setIsLoading(false);
       setGames(res);
     });

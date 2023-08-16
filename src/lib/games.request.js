@@ -5,7 +5,8 @@
 //     platform: "PC",
 //     price: 20503,
 //     genres: [
-//       "6T1Sz0vpQZuqqsVefKkH", "QtYarntNdViJcyQVmDOL", "zDNkMiGcq2UhvLVle9PB"
+//       {id:"6T1Sz0vpQZuqqsVefKkH", name: "Deportes" },{id:"QtYarntNdViJcyQVmDOL", name: "Multijugador"},{id:"zDNkMiGcq2UhvLVle9PB", name: "Un jugador" }
+//       // "6T1Sz0vpQZuqqsVefKkH", "QtYarntNdViJcyQVmDOL", "zDNkMiGcq2UhvLVle9PB"
 //     ],
 //     description:
 //       "Es un simulador de fútbol desarrollado por EA Sports. Como parte de la exitosa serie FIFA, el juego ofrece una experiencia realista de fútbol que incluye equipos, ligas y jugadores reales. Los jugadores pueden competir en partidos de fútbol, administrar equipos, participar en modos de carrera y más. FIFA 23 presenta mejoras gráficas y de jugabilidad con respecto a las entregas anteriores.",
@@ -20,7 +21,9 @@
 //     title: "Red Dead Redemption 2",
 //     platform: "PC",
 //     price: 17239,
-//     genres: [ "USfnlvYAhuL9EQrVjKc1", "QtYarntNdViJcyQVmDOL", "zDNkMiGcq2UhvLVle9PB", "8D1KheCwnw2YDeiIpfqf"
+//     genres: [ 
+//       {id:"USfnlvYAhuL9EQrVjKc1",name: "Acción"}, {id:"QtYarntNdViJcyQVmDOL",name:"Multijugador"}, {id:"zDNkMiGcq2UhvLVle9PB",name:"Un jugador"}, {id:"8D1KheCwnw2YDeiIpfqf",name:"Aventuras"}
+//       // "USfnlvYAhuL9EQrVjKc1", "QtYarntNdViJcyQVmDOL", "zDNkMiGcq2UhvLVle9PB", "8D1KheCwnw2YDeiIpfqf"
 //     ],
 //     developers: ["Rockstar Games"],
 //     description:
@@ -35,7 +38,11 @@
 //     title: "Dark Souls III",
 //     platform: "PC",
 //     price: 24334,
-//     genres: ["USfnlvYAhuL9EQrVjKc1", "So3XY1qno7nTOAYofIhW", "zDNkMiGcq2UhvLVle9PB", "8D1KheCwnw2YDeiIpfqf", "Z3jnsc3dcUxNQIZDuOXb"
+//     genres: [
+//       {id:"USfnlvYAhuL9EQrVjKc1",name: "Acción"}, {id:"So3XY1qno7nTOAYofIhW",name:"RPG"},
+//        {id:"Z3jnsc3dcUxNQIZDuOXb",name:"Horror"}, {id:"8D1KheCwnw2YDeiIpfqf",name:"Aventuras"},
+//        {id:"zDNkMiGcq2UhvLVle9PB",name:"Un jugador"}
+//       // "USfnlvYAhuL9EQrVjKc1", "So3XY1qno7nTOAYofIhW", "zDNkMiGcq2UhvLVle9PB", "8D1KheCwnw2YDeiIpfqf", "Z3jnsc3dcUxNQIZDuOXb"
 
 //     ],
 //     developers: ["FromSoftware"],
@@ -51,7 +58,10 @@
 //     title: "Assassin's Creed Valhalla",
 //     platform: "PC",
 //     price: 15868,
-//     genres: ["USfnlvYAhuL9EQrVjKc1", "So3XY1qno7nTOAYofIhW","w4T97o1CWMZR1qKBF6Fu", "8D1KheCwnw2YDeiIpfqf"
+//     genres: [
+//       {id:"USfnlvYAhuL9EQrVjKc1",name: "Acción"}, {id:"So3XY1qno7nTOAYofIhW",name:"RPG"},
+//       {id:"w4T97o1CWMZR1qKBF6Fu",name:"Tercera persona"}, {id:"8D1KheCwnw2YDeiIpfqf",name:"Aventuras"},
+//       // "USfnlvYAhuL9EQrVjKc1", "So3XY1qno7nTOAYofIhW","w4T97o1CWMZR1qKBF6Fu", "8D1KheCwnw2YDeiIpfqf"
 //     ],
 //     developers: ["Ubisoft Studios"],
 //     description:
@@ -66,7 +76,10 @@
 //     title: "Need for Speed: Most Wanted",
 //     platform: "PC",
 //     price: 6962,
-//     genres: ["8Mg79iHR8wIL9ec1P3jw", "USfnlvYAhuL9EQrVjKc1","w4T97o1CWMZR1qKBF6Fu", "RhwhO6gIEcXyR3TmcAEp"
+//     genres: [
+//       {id:"USfnlvYAhuL9EQrVjKc1",name: "Acción"}, {id:"8Mg79iHR8wIL9ec1P3jw",name:"Carreras"},
+//       {id:"w4T97o1CWMZR1qKBF6Fu",name:"Tercera persona"}, {id:"RhwhO6gIEcXyR3TmcAEp",name:"Primera persona"},
+//       // "8Mg79iHR8wIL9ec1P3jw", "USfnlvYAhuL9EQrVjKc1","w4T97o1CWMZR1qKBF6Fu", "RhwhO6gIEcXyR3TmcAEp"
 //     ],
 //     developers: ["Criterion Games"],
 //     description:
@@ -81,7 +94,10 @@
 //     title: "Far Cry 3",
 //     platform: "PC",
 //     price: 15556,
-//     genres: ["USfnlvYAhuL9EQrVjKc1", "zDNkMiGcq2UhvLVle9PB", "RhwhO6gIEcXyR3TmcAEp"
+//     genres: [
+//       {id:"USfnlvYAhuL9EQrVjKc1",name: "Acción"},
+//       {id:"zDNkMiGcq2UhvLVle9PB",name:"Un jugador"}, {id:"RhwhO6gIEcXyR3TmcAEp",name:"Primera persona"},
+//       // "USfnlvYAhuL9EQrVjKc1", "zDNkMiGcq2UhvLVle9PB", "RhwhO6gIEcXyR3TmcAEp"
 //     ],
 //     developers: ["Ubisoft Studios"],
 //     description:
@@ -96,7 +112,10 @@
 //     title: "GTA V",
 //     platform: "PC",
 //     price: 15556,
-//     genres: ["USfnlvYAhuL9EQrVjKc1", "zDNkMiGcq2UhvLVle9PB", "RhwhO6gIEcXyR3TmcAEp"
+//     genres: [
+//       {id:"USfnlvYAhuL9EQrVjKc1",name: "Acción"},
+//       {id:"zDNkMiGcq2UhvLVle9PB",name:"Un jugador"}, {id:"RhwhO6gIEcXyR3TmcAEp",name:"Primera persona"},
+//       // "USfnlvYAhuL9EQrVjKc1", "zDNkMiGcq2UhvLVle9PB", "RhwhO6gIEcXyR3TmcAEp"
 //     ],
 //     developers: ["Ubisoft Studios"],
 //     description:
@@ -126,7 +145,7 @@ import { getDocs, collection, getDoc, doc, addDoc, writeBatch, increment } from 
 import { db } from "../firebase/config";
 
 const gamesRef = collection(db, "items");
-const genresRef = collection(db, "genres");
+// const genresRef = collection(db, "genres");
 
 export const getGenre = async (genreId) => {
   const genreDocument = doc(db, "genres", genreId);
@@ -137,31 +156,31 @@ export const getGenre = async (genreId) => {
   return null;
 };
 
-export const getGenres = async () => {
-  let genres = [];
-  const querySnapshot = await getDocs(genresRef);
-  querySnapshot.forEach((doc) => {
-    genres = [...genres, { ...doc.data(), id: doc.id }];
-  });
+// export const getGenres = async () => {
+//   let genres = [];
+//   const querySnapshot = await getDocs(genresRef);
+//   querySnapshot.forEach((doc) => {
+//     genres = [...genres, { ...doc.data(), id: doc.id }];
+//   });
 
-  return genres;
-};
+//   return genres;
+// };
 
-const addGenreName = async (game) => {
-  const genres = await getGenres();
-  // let items = []
-  let newGame = {};
-  // games.forEach(game => {
-  let _foundGenres = [];
-  game.genres.map((genre) => {
-    let _foundGenre = genres.find((_genre) => _genre.id === genre);
-    _foundGenres = [..._foundGenres, _foundGenre];
-  });
-  // items = [...items, { ...game, genres: _foundGenres }]
-  newGame = { ...game, genres: _foundGenres };
-  // })
-  return newGame;
-};
+// const addGenreName = async (game) => {
+//   const genres = await getGenres();
+//   // let items = []
+//   let newGame = {};
+//   // games.forEach(game => {
+//   let _foundGenres = [];
+//   game.genres.map((genre) => {
+//     let _foundGenre = genres.find((_genre) => _genre.id === genre);
+//     _foundGenres = [..._foundGenres, _foundGenre];
+//   });
+//   // items = [...items, { ...game, genres: _foundGenres }]
+//   newGame = { ...game, genres: _foundGenres };
+//   // })
+//   return newGame;
+// };
 
 export const getGames = async () => {
   let games = [];
@@ -170,12 +189,13 @@ export const getGames = async () => {
     games = [...games, { ...doc.data(), id: doc.id }];
   });
 
+  console.log(games)
   let newGames = [];
-  for (const game of games) {
-    let newGame = await addGenreName(game);
-    newGames = [...newGames, newGame];
-  }
-  return newGames;
+  // for (const game of games) {
+  //   let newGame = await addGenreName(game);
+  //   newGames = [...newGames, newGame];
+  // }
+  return games;
 };
 
 export const getGameById = async (id) => {
@@ -183,7 +203,7 @@ export const getGameById = async (id) => {
   const itemsDocSnapshot = await getDoc(itemsDocument);
   if (itemsDocSnapshot.exists()) {
     let game = { id: itemsDocSnapshot.id, ...itemsDocSnapshot.data() };
-    game = await addGenreName(game);
+    // game = await addGenreName(game);
     return game;
   }
 

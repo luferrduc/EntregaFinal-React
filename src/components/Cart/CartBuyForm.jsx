@@ -7,12 +7,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const CartBuyForm = () => {
-  const { cart, getTotalPriceGames, getTotalItems, cleanCart } =
+  const { cart, getTotalPriceGames, cleanCart } =
     useCartContext();
 
   const {
     register,
     handleSubmit,
+    resetField,
     formState: { errors },
     watch,
   } = useForm();
@@ -24,19 +25,32 @@ export const CartBuyForm = () => {
       cantidad,
       price,
     }));
-    console.log(items);
+   
+    if(!items.length){
+      toast.warn(`No existen productos en el carrito`, {
+        className: "bg-slate-500",
+        progressClassName: "bg-sky-500",
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      return new Promise((resolve, reject) => {
+        reject('No existen productos en el carrito')
+      })
+    }
     const order = {
       buyer: { nombre, telefono, email },
       items,
       total: getTotalPriceGames,
     };
-    console.log(order);
 
     const { id } = await addOrder(order);
-    console.log(id); //Mostrar ID usuario TAREA <-->
-
     await updateGames(items);
-
     cleanCart();
 
     return id;
@@ -49,8 +63,8 @@ export const CartBuyForm = () => {
       createOrder(nombre, telefono, email),
       {
         pending: "Creando orden...",
-        success: "Orden creada ✅",
-        error: "Orden rechazada ❌",
+        success: "Orden creada",
+        error: "Orden rechazada",
       },
       {
         className: "bg-slate-500",
@@ -58,35 +72,24 @@ export const CartBuyForm = () => {
       }
     );
 
-    console.log(id);
-    if (id) {
-      toast(`Tu orden es: ${id}`, {
-        className: "bg-slate-500",
-        progressClassName: "bg-sky-500",
-        position: "top-right",
-        autoClose: 4000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    } else {
-      toast.warn(`Tu orden no pudo ser creada`, {
-        className: "bg-slate-500",
-        progressClassName: "bg-sky-500",
-        position: "top-right",
-        autoClose: 4000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    }
+    toast(`Tu orden es: ${id}`, {
+      className: "bg-slate-500",
+      progressClassName: "bg-sky-500",
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
 
+    resetField("nombre")
+    resetField("apellido")
+    resetField("email")
+    resetField("email2")
+    resetField("telefono")
     console.log(data);
   });
 
