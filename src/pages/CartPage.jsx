@@ -6,8 +6,6 @@ export const CartPage = () => {
   const { cart, getTotalPriceGames, removeProduct, getTotalItems, cleanCart } =
     useCartContext();
 
-
-
   return (
     <ContentWrap>
       <h3 className="text-3xl font-semibold text-center text-white p-5 mb-2">Carrito de Compras</h3>

@@ -58,9 +58,9 @@ export const CartBuyForm = () => {
   };
 
   const onSubmit = handleSubmit(async (data) => {
-    const { telefono, nombre, email } = data;
+    const { telefono, nombre, email, apellido } = data;
     const id = await toast.promise(
-      createOrder(nombre, telefono, email),
+      createOrder(nombre, telefono, email, apellido),
       {
         pending: "Creando orden...",
         success: "Orden creada",
