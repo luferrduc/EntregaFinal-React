@@ -191,7 +191,7 @@ export const getGameById = async (id) => {
 };
 
 export const getGameByGenre = async (genreId) => {
-  let gamesGenre = getGames().then(res => res);
+  let gamesGenre = await getGames()
 
   console.log({gamesGenre})
   console.log("Primero")
