@@ -1,4 +1,3 @@
-
 <a name="readme-top"></a>
 
 
@@ -18,8 +17,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://vercel.com/luferrduc/karakura-store">
-    <img src="src/assets/karakura.png" alt="Logo" width="80" height="80">
+  <a href="hhttps://karakura-store.vercel.app">
+    <img src="/src/assets/karakura.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Karakura game store</h3>
@@ -31,10 +30,6 @@
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </div>
 
@@ -45,21 +40,21 @@
   <summary>Tabla de contenidos</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Acerca del proyecto</a>
+      <a href="#acerca-de-mi-proyecto">Acerca del proyecto</a>
       <ul>
-        <li><a href="#built-with">Construida con</a></li>
+        <li><a href="#construida-con">Construida con</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#installation">Instalación</a></li>
+        <li><a href="#instalación">Instalación</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
+    <li><a href="#uso">Uso</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contacto</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#agradecimientos">Agradecimientos</a></li>
   </ol>
 </details>
 
@@ -68,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca de mi proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Karakura Game Store](./public/captura1.png)
 
 Este es un proyecto realizado para la entrega final de mi cursada de React en Coderhouse. Con este proyecto se concluyen varios meses
 de desarrollo y aprendizaje. Es un e-commerce de los videojuegos más populares
@@ -91,23 +86,21 @@ En esta sección se muestran algunas de las librerías/frameworks que se utiliza
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Este proyecto es fácil de empezar a usar de manera local. En primer lugar hay que tener instalado nodejs en su versión 18.
 
 
 ### Instalación
 
 _Aquí dejo algunas instrucciones básicas por si quieres descargar y ver el proyecto localmente_
 
-1. Clone the repo
+1. Clonar el repositorio
    ```sh
    git clone https://github.com/luferrduc/EntregaFinal-React.git
    ```
-2. Install NPM packages
+2. Instalar los paquetes de NPM
    ```sh
    npm install
    ```
@@ -115,35 +108,50 @@ _Aquí dejo algunas instrucciones básicas por si quieres descargar y ver el pro
    ```sh
    npm run dev
    ```
-
+4. Abrir el proyecto en el puerto que indica Vite que suele ser el siguiente
+   ```sh
+   VITE v4.3.9  ready in 1334 ms
+   ➜  Local:   http://localhost:5173/
+   ➜  Network: use --host to expose
+   ➜  press h to show help
+   ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Uso
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Primera entrega
-    - [x] 
+    - [x] Crear un proyecto básico de react ocupando vite
+    - [x] Crear la estructura de carpetas
+    - [x] Instalar los paquetes a utlizar
+    - [x] Crear la página principal
+      - [x] Agregar un navbar y listado de links
+      - [x] Crear un componente que muestre un texto base
+    - [x] Utilizar una base de datos local en un archivo js
 - [x] Segunda entrega
-    - [x] 
-- [ ] Entrega final
-    - [x] Crear formulario de compra validando datos
-    - [x] Agregar readme
-    - [] Mostrar id de la compra
-    - [] Agrear mensajes de alertas
+    - [x] Agregar nuevas páginas
+    - [x] Utilizar react-router-dom para manejar varias páginas
+    - [x] Crear página que permita agregar items a un carrito de compras
+    - [x] Mostrar los items del carrito en una página a parte
+- [x] Entrega final
+    - [x] Crear formulario de compra
+      - [x] Validar campos del formulario
+    - [x] Agregar README.md
+    - [x] Mostrar id de la compra al usuario
+    - [x] Agrear mensajes de alertas
 
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uso
+
+Imagenes de referencia del sitio web
+<div style="display: flex; flex-direction: column; justify-content: center; align-content: center; gap: 8px">
+<img src="./public/captura2.png" alt="Captura de listado de juegos del género acción" style="max-width:75%; align-self: center" >
+<img src="./public/captura3.png" alt="Captura de listado de juegos del género acción" style="max-width:75%; align-self: center" >
+<img src="./public/captura4.png" alt="Captura de listado de juegos del género acción" style="max-width:75%; align-self: center" >
+<div>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -162,8 +170,11 @@ Link del proyecto: [https://github.com/luferrduc/EntregaFinal-React](https://git
 <!-- ACKNOWLEDGMENTS -->
 ## Agradecimientos
 
-Otros recursos que fueron utilizados para este proyecto
+Otros recursos que fueron utilizados para este proyecto y agradecimientos a quienes me ayudaron en el proceso
 
+* [Profe Manuel Adán de Coder](https://www.linkedin.com/in/manuel-adan/)
+* [Tutor Enzo React Coder](https://www.linkedin.com/in/enzo-agú-desarrollador/)
+* [Tutora Cecilia React Coder](https://www.linkedin.com/in/alvarez-cecilia-j/)
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
