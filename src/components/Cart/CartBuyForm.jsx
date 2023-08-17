@@ -99,7 +99,6 @@ export const CartBuyForm = () => {
       noValidate
       className="mx-auto w-full sm:w-1/2 md:w-1/3"
       onSubmit={onSubmit}
-      autoComplete="off"
     >
       <div className="group relative z-0 mb-6 w-full">
         <input
