@@ -2,13 +2,6 @@
 
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -17,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="hhttps://karakura-store.vercel.app">
+  <a href="https://karakura-store.vercel.app">
     <img src="/src/assets/karakura.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -26,10 +19,10 @@
   <p align="center">
     E-commerce de los videojuegos más populares
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/luferrduc/EntregaFinal-React"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://karakura-store.vercel.app">View Demo</a>
   </p>
 </div>
 
