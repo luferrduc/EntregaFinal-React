@@ -11,6 +11,7 @@ export const CartBuyForm = () => {
   const { cart, getTotalPriceGames, cleanCart } =
     useCartContext();
 
+
   const disabledButton = cart.length === 0 ? 'opacity-[0.4]' : 'hover:bg-blue-800 focus:ring-blue-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
   const {
     register,
@@ -19,7 +20,7 @@ export const CartBuyForm = () => {
     formState: { errors },
     watch,
   } = useForm();
-  const createOrder = async (nombre, telefono, email) => {
+  const createOrder = async (nombre, telefono, email, apellido) => {
     const items = cart.map(({ id, title, cantidad, price }) => ({
       id,
       title,
@@ -44,8 +45,10 @@ export const CartBuyForm = () => {
         reject('No existen productos en el carrito')
       })
     }
+    const nombreCompleto = `${nombre} ${apellido}`
+
     const order = {
-      buyer: { nombre, telefono, email },
+      buyer: { nombreCompleto, telefono, email },
       items,
       total: getTotalPriceGames,
     };
@@ -90,8 +93,10 @@ export const CartBuyForm = () => {
       resetField("email")
       resetField("email2")
       resetField("telefono")
+      
     }
-
+ 
+    
   });
 
   return (

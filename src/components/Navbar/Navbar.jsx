@@ -3,7 +3,6 @@ import CartWidget from "../Cart/CartWidget";
 import MenuItems from "../Menu/MenuItems";
 import Logo from "./Logo";
 // import Logo from "./Logo.svg"
-
 const Navbar = () => {
   return (
     <>
